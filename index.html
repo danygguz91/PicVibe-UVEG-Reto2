@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="description" content="Visor de imágenes tipo red social desarrollado con HTML, CSS y JavaScript para fines educativos."> 
+  <title>PicVibe | Visor de imágenes</title> 
+  <link rel="stylesheet" href="css/style.min.css"> 
+</head> 
+<body> 
+  <header class="topbar"> 
+    <div class="brand-wrap"> 
+      <div class="brand-mark" aria-hidden="true">✦</div> 
+      <div> 
+        <h1>PicVibe</h1> 
+        <p>Mi visor de imágenes</p> 
+      </div> 
+    </div> 
+    <button id="randomButton" class="primary-button" type="button">Explorar</button> 
+  </header> 
+ 
+  <main class="app-shell"> 
+    <section class="stories-section" aria-labelledby="storiesTitle"> 
+      <div class="section-heading"> 
+        <div> 
+          <span class="eyebrow">Momentos</span> 
+          <h2 id="storiesTitle">Historias</h2> 
+        </div> 
+        <button id="favoritesButton" class="text-button" type="button" aria-pressed="false">♡ Ver favoritos</button> 
+      </div> 
+      <div id="stories" class="stories" aria-label="Historias destacadas"></div> 
+    </section> 
+ 
+    <section class="controls" aria-label="Herramientas del visor"> 
+      <label class="search-box" for="searchInput"> 
+        <span aria-hidden="true">⌕</span> 
+        <input id="searchInput" type="search" placeholder="Buscar por usuario, lugar o descripción..." autocomplete="off"> 
+      </label> 
+      <select id="categoryFilter" aria-label="Filtrar por categoría"> 
+        <option value="all">Todas</option> 
+        <option value="viajes">Viajes</option> 
+        <option value="comida">Comida</option> 
+        <option value="naturaleza">Naturaleza</option> 
+        <option value="ciudad">Ciudad</option> 
+      </select> 
+    </section> 
+ 
+    <section class="feed-section" aria-labelledby="feedTitle"> 
+      <div class="section-heading feed-heading"> 
+        <div> 
+          <span class="eyebrow">Galería</span> 
+          <h2 id="feedTitle">Publicaciones recientes</h2> 
+        </div> 
+        <span id="resultCount" class="result-count"></span> 
+      </div> 
+      <div id="feed" class="feed-grid"></div> 
+      <p id="emptyState" class="empty-state" hidden>No encontramos imágenes con esos filtros.</p> 
+    </section> 
+  </main> 
+ 
+  <div id="viewer" class="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="viewerTitle"> 
+    <button id="closeViewer" class="viewer-close" type="button" aria-label="Cerrar visor">×</button> 
+    <button id="prevImage" class="viewer-nav prev" type="button" aria-label="Imagen anterior">‹</button> 
+    <div class="viewer-card"> 
+      <img id="viewerImage" src="" alt=""> 
+      <div class="viewer-info"> 
+        <div> 
+          <p id="viewerUser" class="viewer-user"></p> 
+          <h3 id="viewerTitle"></h3> 
+          <p id="viewerCaption"></p> 
+        </div> 
+        <button id="viewerLike" class="like-button large" type="button" aria-label="Marcar como favorito">♡</button> 
+      </div> 
+    </div> 
+    <button id="nextImage" class="viewer-nav next" type="button" aria-label="Imagen siguiente">›</button> 
+  </div> 
+ 
+  <footer> 
+    <p>© 2026 Sandra Daniela Gonzalez Guzman | Proyecto educativo UVEG</p> 
+    <p>Aplicación web empaquetada, versionada y preparada para despliegue local.</p> 
+  </footer> 
+ 
+  <script src="js/script.min.js"></script> 
+</body> 
+</html>
